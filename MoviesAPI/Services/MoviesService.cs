@@ -51,9 +51,22 @@ namespace MovieAPI.Services
         public async Task<Movie> Update(Guid id, MovieUpdateRequest request)
         {
             var movie = await _repository.GetById(id.ToString());
+
+            if (movie == null)
+                throw new NotImplementedException();
+
+            if (!string.IsNullOrEmpty(request.Name))
+            {
+                movie.Name = request.Name;
+            }
+
+
+            if (request?.Score != null)
+            {
+                movie.Score = request.Score;
+            }
+
             return await _repository.Update(id.ToString(), movie);
         }
-
-
     }
 }
