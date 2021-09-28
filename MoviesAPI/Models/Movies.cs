@@ -9,10 +9,15 @@ namespace MovieAPI.Models
 {
     public class Movie : BaseResource
     {
+        //MongoDB has this set to unique
         public string Name { get; set; }
 
         [Range(0, 10)]
         public int Score { get; set; }
+
+        public string Review { get; set; }
+
+        public bool MustWatch { get; set; }
 
 
         public Movie() { }
@@ -21,6 +26,8 @@ namespace MovieAPI.Models
             Id = request.Id;
             Name = request.Name;
             Score = request.Score;
+            Review = request.Review;
+            MustWatch = request.MustWatch;
         }
     }
 }

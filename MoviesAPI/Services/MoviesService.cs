@@ -61,10 +61,20 @@ namespace MovieAPI.Services
                 movie.Name = request.Name;
             }
 
-
             if (request?.Score != null)
             {
                 movie.Score = request.Score;
+            }
+            
+            if (!string.IsNullOrEmpty(request.Review))
+            {
+                movie.Review = request.Review;
+
+            }
+
+            if (request?.MustWatch != null)
+            {
+                movie.MustWatch = request.MustWatch;
             }
 
             return await _repository.Update(id.ToString(), movie);
