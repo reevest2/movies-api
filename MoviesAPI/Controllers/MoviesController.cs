@@ -8,7 +8,7 @@ using MovieAPI.Models;
 using MovieAPI.Controllers;
 using MovieAPI.Repositories;
 using MovieAPI.Services;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieAPI.Controllers
 {
@@ -35,6 +35,7 @@ namespace MovieAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(MovieCreateRequest request)
         {
+            
             var movie = await _service.Create(request);
             return Created($"/movies/{movie.Id}", movie);
              

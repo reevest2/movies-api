@@ -13,6 +13,7 @@ namespace MovieAPI.Models
 
         public string Name { get; set; }
 
+        [Range(0, 10)]
         public int Score { get; set; }
 
     }
