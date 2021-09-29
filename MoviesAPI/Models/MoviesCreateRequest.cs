@@ -11,19 +11,10 @@ namespace MovieAPI.Models
         [Required]
         public string Id { get; set; }
 
-        [Required]
-        //MongoDB has this set to unique
         public string Name { get; set; }
 
-        [Required]
         [Range(0, 10)]
         public int Score { get; set; }
-
-        public string Review { get; set; }
-
-        public bool MustWatch { get; set; }
-
-
 
     }
 }
