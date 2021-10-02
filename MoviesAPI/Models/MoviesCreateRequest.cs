@@ -8,9 +8,7 @@ namespace MovieAPI.Models
 {
     public class MovieCreateRequest
     {
-        [Required]
-        public string Id { get; set; }
-
+        
         [Required]
         //MongoDB has this set to unique
         public string Name { get; set; }
@@ -22,8 +20,5 @@ namespace MovieAPI.Models
         public string Review { get; set; }
 
         public bool MustWatch { get; set; }
-
-
-
     }
 }

@@ -23,7 +23,7 @@ namespace MovieAPI.Models
         public Movie() { }
         public Movie(MovieCreateRequest request)
         {
-            Id = request.Id;
+            Id = Guid.NewGuid().ToString();
             Name = request.Name;
             Score = request.Score;
             Review = request.Review;
