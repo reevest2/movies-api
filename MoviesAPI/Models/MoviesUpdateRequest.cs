@@ -9,7 +9,6 @@ namespace MovieAPI.Models
 {
     public class MovieUpdateRequest
     {
-        [Required]
         public string Id { get; set; }
 
         //MongoDB has this set to unique
