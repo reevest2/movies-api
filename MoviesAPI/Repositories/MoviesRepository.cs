@@ -60,7 +60,7 @@ namespace MovieAPI.Repositories
         public async Task<Movie> Update(string id, Movie data)
         {
             await GetCollection().UpdateOneAsync<Movie>(x => x.Id == id,
-                Builders<Movie>.Update.Set(x => x.Name, data.Name).Set(x => x.Score, data.Score));
+                Builders<Movie>.Update.Set(x => x.Name, data.Name).Set(x => x.Score, data.Score).Set(x => x.Review, data.Review).Set(x => x.MustWatch, data.MustWatch));
 
             return await GetCollection().AsQueryable().FirstOrDefaultAsync(u => u.Id == id);
         }
