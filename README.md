@@ -1,4 +1,4 @@
-# moviesapi2
+# moviesapi
 
 ###### Link to API
 https://movieapi20210928214652.azurewebsites.net/index.html
